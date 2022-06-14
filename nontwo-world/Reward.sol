@@ -1,65 +1,63 @@
 // SPDX-License-Identifier: MIT
+pragma solidity ^0.8.7;
 
-pragma solidity ^0.8.11;
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+ 
+contract TransferERC20Token {
 
-contract Reward {
+  address public owner;
+  uint  balance;
 
-    //current time
-    uint public time_now;
+  //a map to store info if the user has been rewarded
+  mapping(string => bool) public user_is_reward;
 
-    //a map to store info if the user has been rewarded
-    mapping(address  => uint) public address_reward_time;
+  event TransferReceived(address _from,uint _amount);
+  event TransferSent(address _from,address _destAddr,uint _amount);
+  
+  constructor() {
+    owner = msg.sender;
+  }
 
-    function getTime() public {
-        time_now = block.timestamp;
-    }
+  //get erc20 token
+  receive() payable external {
+    balance += msg.value;
+    emit TransferReceived(msg.sender, msg.value);
+  }
 
-    //send money to contract
-    function add_reward_to_pool() public payable {
-        require(msg.value > 10 ether,"The amount sent to the contract each time cannot be less than 10 eth");
-    }
+  // //withdraw the rest money
+  // function withdraw(uint amount, address payable destAddr) public {
+  //   require(msg.sender == owner,"Only owner can withdraw funds");
+  //   require(amount <= balance,"Insufficient funds");
 
-    function getContractBalance() public view returns (uint) {
-        return address(this).balance;
-    }
+  //   destAddr.transfer(amount);
+  //   balance -= amount;
+  //   emit TransferSent(msg.sender,destAddr,amount);
+  // }
 
-    //need a public account to maintain the balance of contract：API implement
+  //
+  function transferERC20(IERC20 token, uint amount, string memory reportHash,address publicAddr) public { 
 
+    //verify hash 
+    require(bytes(reportHash).length >0,"invalid report hash, please check it again");
 
-    //params:varified hash,rewards condition,
-    function reward(string memory hash, uint condition, address payable user) public {
+    //duplicate reward varify
+    require(user_is_reward[reportHash]== false,"the report hash has been used,please try another one ");
 
-        //verify hash !!!, now anyone can get reward
-        require(bytes(hash).length >0,"invalid stored hash, please check it again");
-         
-        //get blocktimestamp Uinx
-        getTime();
-        
-        //duplicate reward control
-        require(address_reward_time[user]< time_now,"The reward has been issued, please get it again after 24 hours");
-        
+    //Only owner can transfer funds
+    require(msg.sender == owner,"Only owner can transfer funds");
 
-        //reward conditions !!! now only two conditions
-        //condition > 60, transfer 100
-        //condition <= 60, transfer 0
+    //get erc20 token balance
+    uint256 erc20balance = token.balanceOf(address(this));
+    require(amount <= erc20balance,"balance is low");
 
-        if (condition > 60) {
-            require(address(this).balance > 3 ether,
-            "The balance of the contract account is insufficient, please recharge");
+    //transfer
+    token.transfer(publicAddr,amount);
+    emit TransferSent(msg.sender,publicAddr,amount);
 
-            // !!! can use a more complex algorithm to calculate reward amout
-            //change to target token
-            user.transfer(3 ether);
-            //set next reward time condition
-            address_reward_time[user] = time_now + 3600 *24;
-            
-        }else {
-            require(address(this).balance > 1 ether,
-            "The balance of the contract account is insufficient, please recharge");
-            //!!! change to target token
-            user.transfer(1 ether);
-            //set next reward time condition
-            address_reward_time[user] = time_now + 3600 *24;
-        }         
-    }
+    user_is_reward[reportHash] = true;
+  }
+
 }
+
+
+ 
