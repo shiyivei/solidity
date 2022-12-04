@@ -1,0 +1,270 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "endTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "revealTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "beneficiaryAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "AuctionEndedAlreadyCalled",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "time",
+						"type": "uint256"
+					}
+				],
+				"name": "TooEarly",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "time",
+						"type": "uint256"
+					}
+				],
+				"name": "TooLate",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "winner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "highestBid",
+						"type": "uint256"
+					}
+				],
+				"name": "AuctionEnded",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "auctionEnd",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "beneficiary",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "blindedBid",
+						"type": "bytes32"
+					}
+				],
+				"name": "bid",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "biddingEnd",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "bids",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "blindedBid",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deposit",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ended",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "highestBid",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "highestBidder",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "values",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bool[]",
+						"name": "fakes",
+						"type": "bool[]"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "secrets",
+						"type": "bytes32[]"
+					}
+				],
+				"name": "reveal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "revealEnd",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withDraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"blindauction.sol": "BlindAuction"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"blindauction.sol": {
+			"keccak256": "0x54fb03804e2e0292ba2cec5f64c7dc9321ef80644937b63c424ce363feb8591c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://4fb9a0b70e204c9d606fad7092b0cdbc8a1c1463c8917805c4e4abe5a29fe303",
+				"dweb:/ipfs/QmagCePJ3X1pJx2yaFh1WGzaE8jM6K4HmJwsP9N7C5bDeS"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,175 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidState",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "OnlySeller",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "Onlybuyer",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ValueNotEven",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "Aborted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "ItemReceived",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "PurchaseConfirmed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "SellerRefunded",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "abort",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "buyer",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "confirmPurchase",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "confirmReceived",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "refundSeller",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "seller",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "state",
+				"outputs": [
+					{
+						"internalType": "enum SafePurchase.State",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "value",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"safepurchase.sol": "SafePurchase"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"safepurchase.sol": {
+			"keccak256": "0xa19f1925236cd67cd1484945fdccde99bdf49e3eaa21f8515b9e872768de564e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://6aaa585ab16d4bff7d361850cc78c1bfa088dcdecb52b57609fe0dd6b57e7c6d",
+				"dweb:/ipfs/QmWoTSaoQE2mf1yZp3c4DyrhDi3VDMEV4BPrzb2jiWQ8iN"
+			]
+		}
+	},
+	"version": 1
+}

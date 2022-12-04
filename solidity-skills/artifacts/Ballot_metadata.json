@@ -1,0 +1,206 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "proposalNames",
+						"type": "bytes32[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "chairperson",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "delegate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getWinnerCounts",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "voteCounts_",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "voter",
+						"type": "address"
+					}
+				],
+				"name": "giveRightToVote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "proposals",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "voteCount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposal",
+						"type": "uint256"
+					}
+				],
+				"name": "vote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "voters",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "weight",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "voted",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "delegate",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "vote",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "winProposals",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "winnerName",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "winnerName_",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"lottery.sol": "Ballot"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"lottery.sol": {
+			"keccak256": "0x968b6306a0f4b344df5d60cabe14d56c0a5d84b68f1031d4a44d68ac727189d7",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://46a5993464dd1b6496dc1ff24ad19db9770b17cad557c926a96c13d9b3258526",
+				"dweb:/ipfs/QmczeUaiDk18cy9zgn6emAqmCLusD95RJMSAv3bdjv61yn"
+			]
+		}
+	},
+	"version": 1
+}
