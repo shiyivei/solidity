@@ -1,0 +1,81 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "claimPayment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "kill",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity-skills/signpayment.sol": "ReceiverPays"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity-skills/signpayment.sol": {
+			"keccak256": "0xc67ea094deb784a87b6caa5fca6e15589d5f685c495297dfba8fcf0b11b10b8a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://9d81e959c7987e16783fd942c6d80f4e2e73e8b62267c2e894ed0f7e25e90ba4",
+				"dweb:/ipfs/Qmdfbi89jwR2bSX3peBEcWNFEUn9zXLqj7EPoXGvtXdMj2"
+			]
+		}
+	},
+	"version": 1
+}
